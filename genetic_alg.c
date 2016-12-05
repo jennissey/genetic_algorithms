@@ -58,12 +58,10 @@ int main(int argc, char const *argv[]) {
   // fitness_scores[i] = population[i]
   solution_index =
       assign_fitness(fitness_scores, population, n, solution_number);
-  // BREAKPOINT
 
   int g = 0;
   // evolve chromosomes until a solution is found
   while (solution_index == -1) {
-    // for (int x = 0; x < 10; x++) { // for testing reasons
 
     // create <N> new chromosomes
     for (int i = 0; i < n - 1; i = i + 2) {
@@ -79,12 +77,7 @@ int main(int argc, char const *argv[]) {
       // do mutation of each bit with the possibility of <mutation rate>
       mutation(new_population[i], mutation_rate);
       mutation(new_population[i + 1], mutation_rate);
-
-      // print_operation(0, &partner1);
-      // print_operation(0, &partner2);
     }
-
-    // printf("\n\n");
 
     // replace old population with new one
     tmp = population;
@@ -147,7 +140,6 @@ void free_population(int **population, int n) {
   free(population);
 }
 
-// function OK
 int update_sum(int sum, int operator, int value) {
   if (operator== 10) {
     sum += value;
